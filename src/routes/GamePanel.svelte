@@ -1,5 +1,9 @@
 <script lang="ts">
+    import { createEventDispatcher } from "svelte";
+    const dispatch = createEventDispatcher();
+
     let counter = 1;
+    let clickedCounter = 1;
     let numbers:string[] = Array(16); //displayed numbers
     numbers = numbers.fill('x');
     let openPositions:number[] = Array(16); //positions in the array that can be overwritten
@@ -20,13 +24,16 @@
 
     
     function handleClick(id:number) {
-        numbers[id] = 'x';
-        openPositions = [...openPositions, id];
-        if(counter <= 20){
-            addNumber();
-        }
-        if(openPositions.length == 16){
-            alert('slay!')
+        if(numbers[id] === clickedCounter.toString()){
+            clickedCounter++;
+            numbers[id] = 'x';
+            openPositions = [...openPositions, id];
+            if(counter <= 20){
+                addNumber();
+            }
+            if(clickedCounter == 21){
+                dispatch('finished');
+            }
         }
     }
 </script>
