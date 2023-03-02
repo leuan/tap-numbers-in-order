@@ -38,17 +38,8 @@
     }
 </script>
 
-<div class="button-container">
+<div class="grid grid-cols-4 grid-rows-4 gap-2 max-w-md">
     {#each numbers as buttonNumber, id}
-    <button on:click={()=>{handleClick(id)}}>{buttonNumber}</button>
+    <button class="bg-gray-200 aspect-square rounded text-4xl" on:click={()=>{handleClick(id)}}>{buttonNumber === 'x' ? '' : buttonNumber}</button>
     {/each}
 </div>
-
-<style>
-    .button-container {        
-        display: grid;
-        gap: 2em 2em;
-        grid-template-columns: repeat(4, 3em);
-        grid-template-rows: repeat(4, 3em);
-    }
-</style>
