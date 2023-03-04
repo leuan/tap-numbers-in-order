@@ -17,4 +17,4 @@
     }
 </script>
 
-<p>{formatTime(totalSeconds)}</p>
+<p class="font-bold text-2xl my-4">{formatTime(totalSeconds)}</p>

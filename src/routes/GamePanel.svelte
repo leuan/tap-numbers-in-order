@@ -9,6 +9,8 @@
     let openPositions:number[] = Array(16); //positions in the array that can be overwritten
     openPositions = Array.from(Array(16).keys());
 
+    const colors = ['#fc0303', '#fc5603', '#fcce03', '#4dff00', '#0026ff', '#a200ff', '#ff00ff', '#00eeff', '#4400ff'];
+
     function addNumber() {
         let position = openPositions[Math.floor(Math.random() * openPositions.length)]; //pick a random position
         numbers[position] = counter.toString();
@@ -38,8 +40,8 @@
     }
 </script>
 
-<div class="grid grid-cols-4 grid-rows-4 gap-2 max-w-md">
+<div class="grid grid-cols-[repeat(4,_minmax(3rem,_1fr))] md:grid-cols-[repeat(4,_15%)] xl:grid-cols-[repeat(4,_7%)] place-content-center gap-2">
     {#each numbers as buttonNumber, id}
-    <button class="bg-gray-200 aspect-square rounded text-4xl" on:click={()=>{handleClick(id)}}>{buttonNumber === 'x' ? '' : buttonNumber}</button>
+    <button style="color: {colors[Math.floor(Math.random() * 9)]};" class="bg-gray-200 aspect-square rounded text-4xl font-bold" on:click={()=>{handleClick(id)}}>{buttonNumber === 'x' ? '' : buttonNumber}</button>
     {/each}
 </div>

@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        title: ['Single Day'],
+        body: ['Finlandica']
+      }
+    },
   },
   plugins: [],
 }
