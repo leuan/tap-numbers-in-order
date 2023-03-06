@@ -15,7 +15,7 @@
 <nav class="py-4 border-b-2">
 	<ul class="flex justify-center">
 		<li>
-			<a href="/" class="text-4xl text-green-600 font-bold font-title">Tap Numbers in Order!</a>
+			<p class="text-4xl text-green-600 font-bold font-title">Tap Numbers in Order!</p>
 		</li>
 	</ul>
 </nav>
