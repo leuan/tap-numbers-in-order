@@ -23,7 +23,7 @@
 			<GamePanel on:finished={handleFinished} />
 		{:else}
 			<div class="grid place-items-center">
-				<p class="text-3xl mx-2 mb-4">
+				<p class="text-3xl mx-auto mb-4">
 					Great! You finished in {#if Math.floor(timeElapsed / 60) > 0}{Math.floor(
 							timeElapsed / 60
 						)} minutes and
