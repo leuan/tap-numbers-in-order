@@ -12,13 +12,7 @@
 	}
 </script>
 
-<nav class="py-4 border-b-2">
-	<ul class="flex justify-center">
-		<li>
-			<p class="text-4xl text-green-600 font-bold font-title">Tap Numbers in Order!</p>
-		</li>
-	</ul>
-</nav>
+
 <main>
 	{#if isStarted}
 		<div class="flex justify-center">
@@ -28,22 +22,22 @@
 			<GamePanel on:finished={handleFinished} />
 		{:else}
 			<div class="grid place-items-center">
-				<p class="text-3xl mx-2 mb-3">
+				<p class="text-3xl mx-2 mb-4">
 					Great! You finished in {#if Math.floor(timeElapsed / 60) > 0}{Math.floor(
 							timeElapsed / 60
 						)} minutes and
 					{/if}{timeElapsed % 60} seconds.
 				</p>
 				<button
-				class="px-6 py-4 bg-orange-400 rounded text-gray-50 shadow font-bold text-4xl mb-5"
+				class="btn text-4xl mb-6"
 				on:click={() => {isFinished = false; timer.restartTimer();}}>Restart game</button>
-				<img src="/images/monkey.gif" alt="monkey" class="rounded w-3/4 md:w-1/2 lg:w-1/4"/>
+				<img src="/images/monkey.gif" alt="monkey" class="rounded w-3/4 md:w-1/2 lg:w-1/4 shadow-nm-pressed"/>
 			</div>
 		{/if}
 	{:else}
 		<div class="flex justify-center items-center h-96">
 			<button
-				class="px-6 py-4 bg-orange-400 rounded text-gray-50 shadow font-bold text-4xl"
+				class="btn text-4xl"
 				on:click={() => {
 					isStarted = true;
 				}}>Start Game</button>
