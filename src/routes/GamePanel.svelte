@@ -37,11 +37,11 @@
 </script>
 
 <div
-	class="grid mx-8 grid-cols-[repeat(4,_minmax(3rem,_1fr))] md:grid-cols-[repeat(4,_15%)] xl:grid-cols-[repeat(4,_7%)] place-content-center gap-3"
+	class="grid mx-8 grid-cols-[repeat(4,_minmax(3rem,_1fr))] md:grid-cols-[repeat(4,_15%)] xl:grid-cols-[repeat(4,_7%)] place-content-center justify-items-stretch gap-3"
 >
 	{#each numbers as buttonNumber, id}
 		<button
-			class="btn aspect-square text-4xl"
+			class="btn flex justify-center items-center aspect-square text-4xl"
 			on:click={() => {
 				handleClick(id);
 			}}>{buttonNumber === 'x' ? '' : buttonNumber}</button
