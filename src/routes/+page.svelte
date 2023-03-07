@@ -1,9 +1,10 @@
 <script lang="ts">
 	import GamePanel from './GamePanel.svelte';
-	import Timer from './Timer.svelte';
+	import Clock from './Clock.svelte';
+
 	let isStarted = false;
 	let isFinished = false;
-	let timer: Timer;
+	let timer: Clock;
 	let timeElapsed: number;
 
 	function handleFinished() {
@@ -16,7 +17,7 @@
 <main>
 	{#if isStarted}
 		<div class="flex justify-center">
-			<Timer bind:this={timer} bind:totalSeconds={timeElapsed} />
+			<Clock bind:this={timer} bind:totalSeconds={timeElapsed} />
 		</div>
 		{#if !isFinished}
 			<GamePanel on:finished={handleFinished} />
