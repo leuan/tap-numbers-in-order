@@ -2,6 +2,12 @@
     import "../app.css";
 </script>
 
+<svelte:head>
+	<title>
+		Tap Numbers in Order!
+	</title>
+</svelte:head>
+
 <nav class="py-2 border-b-2 border-stone-200">
 	<ul class="flex justify-center">
 		<li>
